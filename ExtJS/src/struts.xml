@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="gbk" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"/WEB-INF/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.i18n.encoding" value="GBK"/>
+    
+    <!-- 
+    	只过滤后缀为 .do，.action 或后缀为空 的链接
+    	如果后缀不是 .do 或 .action，Struts 是不解析的；
+     -->
+    <constant name="struts.action.extension" value=",do,action"/>
+    
+    <!-- 
+    	如果不进行上面的设置，那么，只过滤 .action 或 没有后缀 的路径，其它后缀的路径不解析
+     -->
+    
+    <!-- 
+    	过滤掉指定路径
+    	多条路径，以逗号隔开
+    	这时再提交下面的 do路径，因为 Struts2 不会去解析，所以会提示 404 错误
+     -->
+    <constant name="struts.action.excludePattern" value="/test1_fn3.do"/>
+    
+	<!-- 前台 Start -->
+    <package name="main" namespace="/main" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/public/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+        
+        <action name="index">
+        	<result type="redirect">/main/main.jsp</result>
+        </action>
+
+    </package>
+    <!-- 前台 End -->
+
+    <!-- Add packages here -->
+    
+    <!-- 找不到页面，跳到首页 --> 
+    <package name="default" namespace="/" extends="struts-default">
+    	<default-action-ref name="index"></default-action-ref>
+    	
+    	<action name="index">
+    		<result type="redirect">/index.jsp</result>
+    	</action>
+    	
+    	<action name="test_*" class="com.land.action.TestAction" method="{1}">
+    		<result name="fn1">/index.jsp</result>
+    	</action>
+    </package>
+
+</struts>
