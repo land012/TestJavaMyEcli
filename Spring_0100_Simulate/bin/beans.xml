@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	
+	
+	<bean name="userService" class="com.xu.service.UserService">
+		<property name="userDao" ref="ud" />
+	</bean>
+	
+	<bean name="ud" class="com.xu.dao.impl.UserDaoImpl"></bean>
+</beans>

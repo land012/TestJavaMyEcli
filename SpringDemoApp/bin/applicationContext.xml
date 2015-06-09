@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="helloWorldController" class="com.umbrella.springdemo.controller.HelloWorldController" />
+	<bean id="helloWorldController1" class="com.umbrella.springdemo.util.HelloWorldFactory1" factory-method="createInstance" />
+	
+	<bean id="helloWorldFactory2" class="com.umbrella.springdemo.util.HelloWorldFactory2" />
+	<bean id="helloWorldController2" factory-bean="helloWorldFactory2" factory-method="createInstance" />
+	
+	<!-- 加载.properties配置文件 替换xml中的点位符 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="locations">
+    		<list>
+    			<value>classpath:config.properties</value>
+    			<value>classpath:config2.properties</value>
+    		</list>
+    	</property>
+	</bean>
+	
+	<!-- bean defination 继承 -->
+	<bean id="helloWorldServiceAncestor" abstract="true">
+		<property name="name" value="tom" />
+		<property name="age" value="18" />
+	</bean>
+	<bean id="helloWorldService" class="com.umbrella.springdemo.service.HelloWorldService" parent="helloWorldServiceAncestor">
+		<property name="name" value="${name2}" />
+	</bean>
+</beans>

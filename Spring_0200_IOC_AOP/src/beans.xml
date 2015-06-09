@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+		   http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		   http://www.springframework.org/schema/aop
+		   http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+	<!-- xml 的写法 -->
+	<!-- 
+	<bean id="userService" class="com.xu.service.UserService">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	
+	<bean id="userDao" class="com.xu.dao.impl.UserDaoImpl"></bean>
+
+	<bean id="testBean" class="com.xu.test.impl.TestBeanImpl">
+		<property name="lists">
+			<list>
+				<value>1</value>
+				<value>2</value>
+			</list>
+		</property>
+	</bean>
+	 -->
+	
+	<!-- annotation 的写法 -->
+	<!-- 
+	<context:annotation-config></context:annotation-config>
+	<bean id="userService" class="com.xu.service.UserService"></bean>
+	<bean id="userDao" class="com.xu.dao.impl.UserDaoImpl"></bean>
+	<bean id="ud2" class="com.xu.dao.impl.UserDaoImpl"></bean>
+	 -->
+	
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.xu"></context:component-scan>
+	
+	<!-- AOP annotation 的写法 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>

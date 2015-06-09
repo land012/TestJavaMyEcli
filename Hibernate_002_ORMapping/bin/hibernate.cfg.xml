@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/test</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <!--  
+        <property name="connection.pool_size">1</property>
+        -->
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        
+        <property name="current_session_context_class">thread</property>
+        
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <!-- 
+        <property name="hbm2ddl.auto">update</property>
+         -->
+         
+         <!-- 一对一单向外键 -->
+		<!--
+        <mapping class="com.land.model.Husband" />
+        <mapping class="com.land.model.Wife" />
+        
+        <mapping resource="com/land/model/Student.hbm.xml" />
+        <mapping resource="com/land/model/StudentCard.hbm.xml" />
+        -->
+        
+        <!-- 一对一单向主键 --> 
+        <!--  
+        <mapping class="com.land.model.one2onepk.Husband" />
+        <mapping class="com.land.model.one2onepk.Wife" />
+        
+        <mapping resource="com/land/model/one2onepk/Vo1.hbm.xml" />
+        <mapping resource="com/land/model/one2onepk/Vo2.hbm.xml" />
+        <mapping resource="com/land/model/one2onepk/Vo3.hbm.xml" />
+        -->
+        
+        <!-- 联合主键 -->
+        <!--  
+        <mapping class="com.land.model.compositepk.Vo1" />
+        <mapping class="com.land.model.compositepk.Vo2" />
+        -->
+        
+        <!-- 组件 -->
+        <!--  
+        <mapping class="com.land.model.component.Vo1" />
+        -->
+        
+        <!-- 多对一单向关联 -->
+        <!--  
+        <mapping class="com.land.model.many2oneuni.Group" />
+        <mapping class="com.land.model.many2oneuni.User" />
+        -->
+        
+        <!-- 一对多单向 -->
+        <!--  
+        <mapping class="com.land.model.one2many.Group" />
+        <mapping class="com.land.model.one2many.User" />
+        -->
+        
+        <!-- 一对多/多对一双向 -->
+        <!--  
+        <mapping class="com.land.model.many2onebi.Group" />
+        <mapping class="com.land.model.many2onebi.User" />
+        
+        <mapping resource="com/land/model/many2onebi/Animal.hbm.xml" />
+        <mapping resource="com/land/model/many2onebi/Tiger.hbm.xml" />
+        -->
+        
+        <!-- 多对多单向 -->
+        <!--  
+        <mapping class="com.land.model.many2manyuni.Teacher" />
+        <mapping class="com.land.model.many2manyuni.Student" />
+        -->
+        
+        <!-- 多对多双向 -->
+        <mapping class="com.land.model.many2manybi.Teacher" />
+        <mapping class="com.land.model.many2manybi.Student" />
+		
+    </session-factory>
+
+</hibernate-configuration>

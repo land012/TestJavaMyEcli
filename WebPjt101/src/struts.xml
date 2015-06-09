@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="gbk" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"/WEB-INF/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <!-- Struts 中文乱码问题 -->
+    <constant name="struts.i18n.encoding" value="GBK"/>
+    <constant name="struts.action.extension" value="do,action"/>
+    
+    <!-- 
+    	过滤掉指定路径
+    	这时再提交下面的 do路径，因为 Struts2 不会去解析，所以会提示 404 错误
+     -->
+    <constant name="struts.action.excludePattern" value="/UploadServlet,/WaitServlet.do"/>
+    
+    <!--  
+    <package name="pathdefault" namespace="" extends="struts-default">
+    	<action name="test2_*" class="com.land.action.Test2Action" method="{1}">
+    		<result name="index">/pages/struts2/test2/index_default.jsp</result>
+    	</action>
+    	<action name="testdefault_*" class="com.land.action.TestDefaultAction" method="{1}">
+    		<result name="index">/pages/struts2/testdefault/index_default.jsp</result>
+    	</action>
+    </package>
+    -->
+
+    <package name="root" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/public/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="test1_*" class="com.land.action.Test1Action" method="{1}">
+        	<result name="index">/pages/struts2/test1/index.jsp</result>
+            <result name="fn1">/fn1.jsp</result>
+            <result name="fn11">/pages/submit.jsp</result>
+            
+            <result name="fn2down" type="stream">
+            	<param name="inputName">downfile</param>
+            	<param name="contentType">application/force-download</param>
+            	<param name="contentDisposition">attachment;filename=${downfileName}</param>
+            	<param name="bufferSize">4096</param>
+            </result>
+            
+            <result name="fn3">/fn1.jsp</result>
+            <result name="test3">/pages/submit.jsp</result>
+        </action>
+        
+        <!-- 在Action里配路径 -->
+        <action name="test/test1_*" class="com.land.action.Test1Action" method="{1}">
+        	<result name="index">/index.jsp</result>
+            <result name="fn1">/fn1.jsp</result>
+            <result name="fn11">/submit.jsp</result>
+            <result name="fn2down" type="stream">
+            	<param name="inputName">downfile</param>
+            	<param name="contentType">application/force-download</param>
+            	<param name="contentDisposition">attachment;filename=${downfileName}</param>
+            	<param name="bufferSize">4096</param>
+            </result>
+            <result name="fn3">/fn1.jsp</result>
+            <result name="test3">/submit.jsp</result>
+        </action>
+        
+        <action name="wait_*" class="com.land.action.WaitAction" method="{1}"></action>
+        
+        <action name="test2_*" class="com.land.action.Test1Action" method="{1}">
+    		<result name="index">/pages/struts2/test2/index2.jsp</result>
+    	</action>
+        
+    </package>
+    
+    <package name="test2" namespace="/test2" extends="struts-default">
+    	<action name="test2_*" class="com.land.action.Test1Action" method="{1}">
+    		<result name="index">/pages/struts2/test2/index.jsp</result>
+    	</action>
+    </package>
+
+    <!-- Add packages here -->
+
+</struts>

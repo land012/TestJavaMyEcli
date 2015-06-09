@@ -1,0 +1,3 @@
+0Hello!
+This is a file!
+你好！哈哈a

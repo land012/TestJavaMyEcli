@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    </package>
+
+    <include file="example.xml"/>
+	-->
+	
+	<!-- 开启开发模式，修改后立即见效 -->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="gbk" />
+	<constant name="struts.action.extension" value="do,action" />
+	<!-- 这个在 struts-plugin.xml 中已经配置了 -->
+	<!--  
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	-->
+	<!-- Action 中的属性的注入类型 byName -->
+	<!--
+	<constant name="struts.objectFactory.spring.autoWire" value="name" />
+	-->
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+        
+        <!-- 由 Spring创建Action，类名上必须用 @Componet标签 -->
+        <action name="account_*" class="accountAction" method="{1}">
+        <!-- 由 struts 创建 Action，是 prototype的 -->
+        <!--<action name="account_*" class="com.xyz.action.AccountAction" method="{1}">-->
+        	<result name="register">/register.jsp</result>
+        	<result name="registerSuccess">/registerSuccess.jsp</result>
+        	<result name="registerFail">/registerFail.jsp</result>
+        	<result name="userlist">/userlist.jsp</result>
+        	<result name="userinfo">/userinfo.jsp</result>
+        </action>
+        
+    </package>
+
+</struts>

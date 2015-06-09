@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="lib/commons-email-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/ezmorph-1.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.2.1-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="lib/jxl.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/producerConsumer.jar" sourcepath="E:/My Repository/Java/生产者消费者/producerConsumer.src.zip"/>
+	<classpathentry kind="lib" path="lib/poi/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/poi/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi/poi-ooxml-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi/poi-ooxml-schemas-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar" sourcepath="C:/Users/asdf/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-jdk16-143.jar"/>
+	<classpathentry kind="lib" path="lib/commons-net-3.3.jar"/>
+	<classpathentry kind="lib" path="lib/edtftpj-2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/jline-0.9.94.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/zookeeper-3.4.6.jar"/>
+	<classpathentry kind="lib" path="lib/jna.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30-bin.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool2-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-dbcp2-2.0.1.jar" sourcepath="E:/My Repository/Apache/Commons/DBCP/commons-dbcp2-2.0.1/commons-dbcp2-2.0.1-src.zip"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-pool-1.5.6.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/spymemcached-2.10.3.jar"/>
+	<classpathentry kind="lib" path="lib/java_memcached-release_2.6.6.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

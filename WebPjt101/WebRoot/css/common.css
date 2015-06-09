@@ -1,0 +1,30 @@
+body {
+	padding: 10px; font-size: 11pt;
+}
+label.error {
+	color:#FF0000; padding-left:10px; display: none;
+}
+dl,dt,dd,ul,li {
+	margin:0px; padding:0px;
+}
+ul,li {
+	list-style-type:none;
+}
+dt {
+	font-weight:bold; margin-top:10px;
+}
+ul {
+	padding-left:15px;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.tbl_std {
+	border-collapse:collapse; empty-cells:show;
+}
+.tbl_std th, .tbl_std td {
+	padding:0px;
+}
