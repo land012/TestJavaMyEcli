@@ -56,6 +56,7 @@ public class WaitDemo {
 						/**
 						 * 调用某个对象的 wait()方法，意味着什么？
 						 * 当前线程释放掉 mutex 的锁
+						 * 所以 wait()
 						 */
 						mutex.wait();
 //						Thread.sleep(3000);
