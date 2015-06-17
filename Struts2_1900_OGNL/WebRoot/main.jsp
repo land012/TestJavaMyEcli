@@ -8,9 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- OGNL -->
 <s:debug></s:debug>
 This is Main.jsp£¡
-<br/>
-t:<%=request.getParameter("t") %>
 </body>
 </html>

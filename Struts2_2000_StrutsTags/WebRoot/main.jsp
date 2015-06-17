@@ -39,6 +39,7 @@
 	<br>
 	<s:property value="#u1.name"/>
 	<hr/>
+	<!-- ¿ØÖÆ±êÇ© -->
 	<s:if test="u != null">
 		User:<s:property value="u" />
 	</s:if>

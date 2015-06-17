@@ -36,9 +36,9 @@
 	<constant name="struts.i18n.encoding" value="gbk" />
 	
 	<package name="main" namespace="/" extends="struts-default">
-        <action name="ResultParams_exec" class="com.xu.action.ResultParamsAction">
+        <!--<action name="ResultParams_exec" class="com.xu.action.ResultParamsAction">
         	<result type="redirect">main.jsp?t=${type2}</result>
-        </action>
+        </action>-->
         <action name="action2" class="com.xu.action.ResultParamsAction" method="fn2">
         	<result>main.jsp</result>
         </action>

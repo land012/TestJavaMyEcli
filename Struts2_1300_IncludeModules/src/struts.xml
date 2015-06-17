@@ -34,6 +34,8 @@
 	<!-- 开启开发模式，修改后立即见效 -->
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.i18n.encoding" value="gbk" />
+	
+	<!-- Include Module -->
 	<include file="login.xml" />
 	
     <!-- Add packages here -->

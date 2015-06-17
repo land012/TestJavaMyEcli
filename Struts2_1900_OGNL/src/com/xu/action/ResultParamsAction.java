@@ -8,7 +8,6 @@ public class ResultParamsAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println(this.type);
 		this.type2 = this.type;
 		return SUCCESS;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Struts2_0200_Namespace">
+        <wb-resource deploy-path="/" source-path="/WebRoot"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="/Structs2_0200_Namespace"/>
+        <property name="java-output-path" value="/Structs2_0200_Namespace/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

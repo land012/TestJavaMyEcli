@@ -23,7 +23,6 @@ public class SimpleExampleTest {
 			}
 			//System.out.println(Arrays.toString(list.toArray()));
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -34,7 +33,6 @@ public class SimpleExampleTest {
 			Account a = SimpleExample.selectAccountById(1);
 			System.out.println(a.getFirstName());
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
