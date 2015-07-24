@@ -4,8 +4,6 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 
-import org.apache.commons.lang3.math.NumberUtils;
-
 import com.my.base.BaseTest;
 
 public class DecimalFormatTest extends BaseTest {
