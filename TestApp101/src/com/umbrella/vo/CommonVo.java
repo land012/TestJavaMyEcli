@@ -1,4 +1,4 @@
-package com.my.vo;
+package com.umbrella.vo;
 
 public class CommonVo {
 	private static int i = 0;

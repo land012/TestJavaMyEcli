@@ -26,7 +26,7 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
 import com.my.base.BaseTest;
-import com.my.vo.User;
+import com.umbrella.vo.User;
 
 public class ExcelGenerateTest extends BaseTest {
 	private static int seq = 0;

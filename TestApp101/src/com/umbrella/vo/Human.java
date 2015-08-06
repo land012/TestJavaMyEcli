@@ -1,4 +1,4 @@
-package com.my.vo;
+package com.umbrella.vo;
 
 import java.io.Serializable;
 

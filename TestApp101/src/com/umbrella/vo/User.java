@@ -1,4 +1,4 @@
-package com.my.vo;
+package com.umbrella.vo;
 
 public class User extends Human {
 	private String age;

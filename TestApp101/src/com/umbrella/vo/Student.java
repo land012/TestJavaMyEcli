@@ -1,4 +1,4 @@
-package com.my.vo;
+package com.umbrella.vo;
 
 public class Student extends Human {
 	private int classes;

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.my.base.BaseTest;
-import com.my.vo.User;
+import com.umbrella.vo.User;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

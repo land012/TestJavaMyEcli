@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.my.base.BaseTest;
-import com.my.vo.User;
+import com.umbrella.vo.User;
 
 public class ListTest extends BaseTest {
 

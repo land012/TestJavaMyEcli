@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hispeed.producerConsumer.nodistinct.NoDistinctProducer;
-import com.my.vo.Human;
+import com.umbrella.vo.Human;
 
 public class ThreadNoDistinctProducer extends NoDistinctProducer<Human> {
 	

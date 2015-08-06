@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import com.my.thread.SynThread1;
 import com.my.thread.SynThread2;
-import com.my.vo.CommonVo;
+import com.umbrella.vo.CommonVo;
 
 /**
  * »¥³âËø

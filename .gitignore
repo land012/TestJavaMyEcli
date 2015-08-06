@@ -1,6 +1,10 @@
-/.metadata
+/.metadata/
+/.recommenders/
 
+.settings
 *.class
+.classpath
+bin/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -14,3 +18,10 @@
 hs_err_pid*
 
 logs/
+
+
+
+RemoteSystemsTempFiles/
+
+
+

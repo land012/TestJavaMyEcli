@@ -1,4 +1,4 @@
-package com.my.vo;
+package com.umbrella.vo;
 
 public enum Animal {
 	TIGER("I'm tiger!"),

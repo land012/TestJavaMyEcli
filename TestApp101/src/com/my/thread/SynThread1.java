@@ -1,6 +1,6 @@
 package com.my.thread;
 
-import com.my.vo.CommonVo;
+import com.umbrella.vo.CommonVo;
 
 public class SynThread1 implements Runnable {
 

@@ -7,7 +7,7 @@ import java.util.Set;
 
 import com.my.service.CommonService;
 import com.my.util.MyComparator;
-import com.my.vo.User;
+import com.umbrella.vo.User;
 
 public class SystemTest {
 

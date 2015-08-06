@@ -53,6 +53,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					+ "-" + isLetterDigit("a9"));
 			
 			//alert(/^[0-9]+$/.test("112"));
+			
+			// 验证 以逗号隔开的 小数
+			var patten = /^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/; 
 		});
 		
 		/**

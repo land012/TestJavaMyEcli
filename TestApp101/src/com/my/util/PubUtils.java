@@ -8,8 +8,8 @@ import java.util.List;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import com.my.vo.Human;
-import com.my.vo.Student;
+import com.umbrella.vo.Human;
+import com.umbrella.vo.Student;
 
 public class PubUtils {
 	

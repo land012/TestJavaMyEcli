@@ -4,8 +4,8 @@ package test.com.my.enumpkg;
 
 import org.junit.Test;
 
-import com.my.vo.Animal;
-import com.my.vo.Color;
+import com.umbrella.vo.Animal;
+import com.umbrella.vo.Color;
 
 public class EnumTest {
 	

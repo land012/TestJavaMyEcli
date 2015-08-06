@@ -1,22 +1,30 @@
-package com.my.test;
+package com.umbrella.java.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
+import org.junit.Test;
+
 import com.my.base.BaseTest;
-import com.my.vo.User;
+import com.umbrella.vo.User;
 /**
  * 反射
  * @author asdf
  *
  */
 public class ReflectTest extends BaseTest {
+	
+	class Cat {
+		private long id;
+		private Long id2;
+		private String name;
+		private boolean gender;
+		private Boolean gender2;
+	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	@Test
+	public void test1() {
 //		info.info(ReflectTest.class.getName());
 		
 //		// Modified 修改符
@@ -75,6 +83,22 @@ public class ReflectTest extends BaseTest {
 //		for(Method m : ms2) {
 //			System.out.println("    " + m.getName());
 //		}
+	}
+	
+	/**
+	 * 成员变量类型
+	 */
+	@Test
+	public void test2() {
+		Field[] fields = Cat.class.getDeclaredFields();
+		for(Field f : fields) {
+			if("boolean".equals(f.getType().getCanonicalName()) || "java.lang.Boolean".equals(f.getType().getCanonicalName())) {
+				System.out.println(f.getType().toString() + " - " + f.getType().getCanonicalName());
+			} else {
+				System.out.println(f.getType().toString() + " , " + f.getGenericType());
+			}
+			
+		}
 	}
 
 }

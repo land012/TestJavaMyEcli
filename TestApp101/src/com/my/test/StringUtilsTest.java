@@ -1,6 +1,7 @@
 package com.my.test;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import com.my.base.BaseTest;
 /**
@@ -13,7 +14,8 @@ public class StringUtilsTest extends BaseTest {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	@Test
+	public void test1() {
 		//System.out.info.infoln(Runtime.getRuntime());
 
 //		info.info(Math.log10(100)); // 2.0
@@ -176,6 +178,70 @@ public class StringUtilsTest extends BaseTest {
 //		String str1 = "abcdef";
 //		info.info(str1.substring(0, str1.length()-1));
 		
+	}
+	
+	/**
+	 * 会保留前后空格
+	 */
+	@Test
+	public void test2() {
+		String str1 = " aasd, 3sdf, df, 23423";
+		String[] str1Arr = StringUtils.split(str1, ",");
+		for(int i=0; i<str1Arr.length; i++) {
+			System.out.println("-" + str1Arr[i] + "-");
+		}
+	}
+	
+	/**
+	 * 长度为1的数组
+	 * 会保留前后空格
+	 */
+	@Test
+	public void test3() {
+		String str1 = " aasd";
+		String[] str1Arr = StringUtils.split(str1, ",");
+		for(int i=0; i<str1Arr.length; i++) {
+			System.out.println("-" + str1Arr[i] + "-");
+		}
+	}
+	
+	/**
+	 * 长度为1的数组
+	 * 会保留前后空格
+	 */
+	@Test
+	public void test4() {
+		String str1 = "aasd,";
+		String[] str1Arr = StringUtils.split(str1, ",");
+		for(int i=0; i<str1Arr.length; i++) {
+			System.out.println("-" + str1Arr[i] + "-");
+		}
+	}
+	
+	/**
+	 * 长度为2的数组
+	 * 会保留前后空格
+	 */
+	@Test
+	public void test5() {
+		String str1 = "aasd,,bb,";
+		String[] str1Arr = StringUtils.split(str1, ",");
+		for(int i=0; i<str1Arr.length; i++) {
+			System.out.println("-" + str1Arr[i] + "-");
+		}
+	}
+	
+	/**
+	 * 长度为0的数组
+	 * 会保留前后空格
+	 */
+	@Test
+	public void test6() {
+		String str1 = ",";
+		String[] str1Arr = StringUtils.split(str1, ",");
+		for(int i=0; i<str1Arr.length; i++) {
+			System.out.println("-" + str1Arr[i] + "-");
+		}
 	}
 
 }

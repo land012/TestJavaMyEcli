@@ -3,7 +3,7 @@ package com.my.prodconsu.gy;
 import org.apache.log4j.Logger;
 
 import com.hispeed.producerConsumer.nodistinct.NoDistinctConsumer;
-import com.my.vo.Human;
+import com.umbrella.vo.Human;
 
 public class ThreadNoDistinctConsumer extends NoDistinctConsumer<Human> {
 	
