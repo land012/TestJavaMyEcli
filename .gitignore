@@ -1,7 +1,7 @@
 /.metadata/
 /.recommenders/
 
-.settings
+.settings/
 *.class
 .classpath
 bin/

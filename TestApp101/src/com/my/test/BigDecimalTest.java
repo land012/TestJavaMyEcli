@@ -5,6 +5,8 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
+import org.junit.Test;
+
 import com.my.base.BaseTest;
 
 /**
@@ -18,7 +20,8 @@ public class BigDecimalTest extends BaseTest {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	@Test
+	public void test1() {
 //		try {
 //			Double.parseDouble("abc");
 //		} catch(NumberFormatException e) {
@@ -242,6 +245,16 @@ public class BigDecimalTest extends BaseTest {
 			BigDecimal temp = new BigDecimal(arr2[i]).multiply(new BigDecimal(100)).setScale(4, RoundingMode.HALF_UP);
 			System.out.print(temp + ",");
 		}
+	}
+	
+	@Test
+	public void test2() {
+		BigDecimal b1 = new BigDecimal(8.3);
+		System.out.println(b1); // 8.300000000000000710542735760100185871124267578125
+		System.out.println(b1.doubleValue()); // 8.3
+		System.out.println(b1.divide(new BigDecimal(100))); // 0.08300000000000000710542735760100185871124267578125
+		System.out.println(b1.divide(new BigDecimal(100)).setScale(5, RoundingMode.HALF_UP)); // 0.08300
+		System.out.println(8.3/100); // 0.083
 	}
 
 }
