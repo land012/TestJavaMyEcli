@@ -1,4 +1,4 @@
-package test.com.umbrella.threadpool3;
+package com.umbrella.threadpool3;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;

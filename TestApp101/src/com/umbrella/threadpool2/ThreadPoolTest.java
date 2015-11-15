@@ -1,4 +1,4 @@
-package test.com.umbrella.threadpool2;
+package com.umbrella.threadpool2;
 
 import org.junit.Test;
 

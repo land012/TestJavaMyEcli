@@ -2,21 +2,86 @@ package com.my.test;
 
 import java.io.UnsupportedEncodingException;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import com.my.base.BaseTest;
 
 public class StringTest extends BaseTest {
+	private static final int TIMES = 100000;
+	
+	@Before
+	public void before() {
+		
+	}
+	
+	/**
+	 * String
+	 */
+	@Test
+	public void test1() {
+		String temp = "abcdefghijklmnopqrstuvwxyz"; // String Constant Pool
+		long start1 = System.currentTimeMillis();
+		String str1 = "";
+		for(int i=0; i<TIMES; i++) {
+			str1 += temp;
+		}
+		long end1 = System.currentTimeMillis();
+		System.out.println(end1 - start1); // 1322
+	}
+	
+	/**
+	 * StringBuilder
+	 */
+	@Test
+	public void test2() {
+		String temp = "abcdefghijklmnopqrstuvwxyz";
+		long start1 = System.currentTimeMillis();
+		StringBuilder sb1 = new StringBuilder();
+		for(int i=0; i<TIMES; i++) {
+			sb1.append(temp);
+		}
+		long end1 = System.currentTimeMillis();
+		System.out.println(end1 - start1); // 30~40
+	}
+	
+	@Test
+	public void test3() {
+		long start1 = System.currentTimeMillis();
+		StringBuilder sb1 = new StringBuilder();
+		for(int i=0; i<TIMES; i++) {
+			sb1.append("abcdefghijklmnopqrstuvwxyz"); // String Constant Pool
+		}
+		long end1 = System.currentTimeMillis();
+		System.out.println(end1 - start1); // 30~40
+	}
+	
+	/**
+	 * StringBuffer
+	 */
+	@Test
+	public void test4() {
+		String temp = "abcdefghijklmnopqrstuvwxyz";
+		long start1 = System.currentTimeMillis();
+		StringBuffer sb1 = new StringBuffer();
+		for(int i=0; i<TIMES; i++) {
+			sb1.append(temp);
+		}
+		long end1 = System.currentTimeMillis();
+		System.out.println(end1 - start1); // 30~40
+	}
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public void test100() {
 //		String str1 = "abcde";
 //		if(str1.length()>4) {
 //			str1 = str1.substring(str1.length()-4);
 //		}
 //		info.info(str1);
 		
-		// Ìæ»» Óë ÕıÔò±í´ïÊ½
+		// æ›¿æ¢ ä¸ æ­£åˆ™è¡¨è¾¾å¼
 //		String str1 = "abacad";
 //		info.info(str1.replace("a", "x"));
 //		info.info(str1.replaceAll("a", "x"));
@@ -25,27 +90,27 @@ public class StringTest extends BaseTest {
 //			info.info(s);
 //		}
 		
-//		// ´òÓ¡ null
+//		// æ‰“å° null
 //		String str1 = null;
 //		info.info(str1); // ""
 //		info.info(str1 + ""); // null
 //		System.out.println(str1); // null
 //		String str2 = str1 + "";
 //		if("null".equals(str2)) {
-//			info.info("str2 ÊÇ \"null\"£¬²»ÊÇ null£¡");
+//			info.info("str2 æ˜¯ \"null\"ï¼Œä¸æ˜¯ nullï¼");
 //		} else {
-//			info.info("str2 ÊÇ null");
+//			info.info("str2 æ˜¯ null");
 //		}
 		
-//		// ×Ö·û´®µÄ×Ö½ÚÊı×é
+//		// å­—ç¬¦ä¸²çš„å­—èŠ‚æ•°ç»„
 //		String str1 = "abc";
 //		byte[] arr1 = str1.getBytes();
 //		for(byte b : arr1) {
 //			info.info(b + " - 0x" + Integer.toString(b, 16));
 //		}
 		
-//		// ºº×Ö×ªÎª×Ö½ÚÂë
-//		String str2 = "ÎÒÄã";
+//		// æ±‰å­—è½¬ä¸ºå­—èŠ‚ç 
+//		String str2 = "æˆ‘ä½ ";
 //		byte[] arr2;
 //		try {
 //			arr2 = str2.getBytes("gbk");
@@ -56,7 +121,7 @@ public class StringTest extends BaseTest {
 //			e.printStackTrace();
 //		}
 		
-		// split µ±·Ö¸ô·ûºóÃæÊÇ¿ÕÊ±£¬µÃµ½µÄÊı¾İ³¤¶È
+		// split å½“åˆ†éš”ç¬¦åé¢æ˜¯ç©ºæ—¶ï¼Œå¾—åˆ°çš„æ•°æ®é•¿åº¦
 //		String str1 = "k1=";
 //		String[] arr1 = str1.split("=");
 //		System.out.println(arr1.length); // 1
@@ -71,15 +136,15 @@ public class StringTest extends BaseTest {
 //		if(null == strb.toString()) {
 //			System.out.println("null");
 //		} else if("".equals(strb.toString())) {
-//			System.out.println("¿Õ");
+//			System.out.println("ç©º");
 //		} else {
-//			System.out.println("ÆäËû");
+//			System.out.println("å…¶ä»–");
 //		}
 		
 //		String str1 = "abcdef";
 //		System.out.println(str1.substring(1, str1.indexOf("c")));
 		
-//		// startWith // Çø·Ö´óĞ¡Ğ´
+//		// startWith // åŒºåˆ†å¤§å°å†™
 //		String str1 = "abc";
 //		String str2 = "";
 //		String str3 = " ";
@@ -93,23 +158,23 @@ public class StringTest extends BaseTest {
 //		System.out.println(str3.startsWith(" ")); // true
 //		System.out.println(str3.startsWith("a")); // false
 		
-//		// ´óĞ¡Ğ´×ª»»
-//		System.out.println("ÄãºÃ".toUpperCase()); // ÄãºÃ
+//		// å¤§å°å†™è½¬æ¢
+//		System.out.println("ä½ å¥½".toUpperCase()); // ä½ å¥½
 //		
 //		/**
-//		 * compareTo() ±È½Ï
-//		 * Èç¹ûÇ°ÃæµÄ Unicode Ğ¡ÓÚ ºóÃæ£¬·µ»Ø ¸ºÊı£»·ñÔò·µ»ØÕıÊı
+//		 * compareTo() æ¯”è¾ƒ
+//		 * å¦‚æœå‰é¢çš„ Unicode å°äº åé¢ï¼Œè¿”å› è´Ÿæ•°ï¼›å¦åˆ™è¿”å›æ­£æ•°
 //		 */
 //		System.out.println("a".compareTo("b")); // -1
 //		System.out.println("b".compareTo("a")); // 1
 ////		
 ////		"abc".getBytes();
 //		
-//		System.out.println("Õ÷".compareTo("ËÑ"));
+//		System.out.println("å¾".compareTo("æœ"));
 		
 //		/**
-//		 * È¡×Ó´®
-//		 * ĞòºÅ´Ó 0 ¿ªÊ¼£¬²»°üÀ¨½áÊøĞòºÅËùÔÚ×Ö·û
+//		 * å–å­ä¸²
+//		 * åºå·ä» 0 å¼€å§‹ï¼Œä¸åŒ…æ‹¬ç»“æŸåºå·æ‰€åœ¨å­—ç¬¦
 //		 */
 //		System.out.println("abcd".substring(2, 3)); // c
 		
@@ -133,6 +198,71 @@ public class StringTest extends BaseTest {
 		
 		System.out.format("%s%n", "1".equals(1));   // false
 		System.out.format("%s%n", "1".equals("1")); // true
+		
+	}
+	
+	@Test
+	public void test160() {
+//		String str1 = "ghcynkflhni8fq8g3ll6zajyyxcf4wjrn651zj47ads3g8imvtrvf9t7vitx0vh5ahsigvdcwu929aqdpso2gwmtj8vhlgredqmrcifp2i19gvbkibetc86xx7ag8jk5";
+//		System.out.println(str1.length());
+		
+		// å–å­ä¸²
+//		String str2 = "abcd";
+//		System.out.println(StringUtils.substring(str2, 1, str2.length()));
+//		
+//		System.out.println(StringUtils.indexOf("abcd", "a")); // 0
+//		
+//		// ç›´æ¥æ‰“å°æ—¥æœŸ
+//		System.out.println(new Date());
+		
+//		// å­—ç¬¦ä¸²ç”¨ == æ¯”è¾ƒ
+//		System.out.println("abc" == "abc"); // true
+//		System.out.println("abc" == ("ab" + "c")); // true
+//		String str3 = "abc";
+//		String str4 = "abc";
+//		String str5 = "ab" + "c";
+//		System.out.println(str3 == str4); // true
+//		System.out.println(str3 == str5); // true
+		
+		/**
+		 * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ç›¸ç­‰ ==
+		 */
+//		String str6 = "a";
+//		String str7 = "b";
+//		String str8 = "ab";
+//		String str9 = "a" + "b";
+//		String str10 = str6 + "b";
+//		String str11 = "a" + str7;
+//		String str12 = str6 + str7;
+//		String str13 = new String("ab");
+//		System.out.println(str8 == str9);  // true
+//		System.out.println(str8 == str10); // false
+//		System.out.println(str8 == str11); // false
+//		System.out.println(str8 == str12); // false
+//		System.out.println(str8 == str13); // false
+//		
+//		String str14 = str13.intern();
+//		System.out.println(str14 == str8);  // true
+//		System.out.println(str14 == str13); // false
+//		
+//		String str15 = str8.intern();
+//		System.out.println(str15 == str8);  // true
+//		
+//		String str16 = str8;
+//		System.out.println(str16 == str8);  // true
+//		
+//		String str17 = new String(new char[]{'a', 'b'});
+//		System.out.println(str17 == str8);  // false
+		
+		String str1 = new String(new char[10]);
+		System.out.println("str1=" + str1 + "|");
+		System.out.println("str1.length()=" + str1.length());
+	}
+	
+	@Test
+	public void test210() {
+		String str1 = "äº²äº²è¢‹é¼ -VINCI";
+		System.out.println(str1.length()); // 10
 	}
 
 }

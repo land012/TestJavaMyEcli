@@ -1,4 +1,4 @@
-package test.com.umbrella.threadpool2;
+package com.umbrella.threadpool2;
 
 import org.apache.log4j.Logger;
 

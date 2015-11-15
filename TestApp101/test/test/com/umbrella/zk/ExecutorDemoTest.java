@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.zookeeper.KeeperException;
 
 import com.umbrella.util.Preferences;
-import com.umbrella.zookeeper.ExecutorDemo;
+import com.umbrella.zookeeper.zk.ExecutorDemo;
 
 public class ExecutorDemoTest {
 	

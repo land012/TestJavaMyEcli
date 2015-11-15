@@ -22,35 +22,12 @@ public class BigDecimalTest extends BaseTest {
 	 */
 	@Test
 	public void test1() {
-//		try {
-//			Double.parseDouble("abc");
-//		} catch(NumberFormatException e) {
-//			info.info("java.lang.NumberFormatException");
-//		}
-//		try {
-//			Double.parseDouble(null);
-//		} catch(NullPointerException e) {
-//			info.info("java.lang.NullPointerException");
-//		}
-		
-//		Double d = new Double("299.40");
-//		int i = (int)d.doubleValue();
-//		System.out.println(i);
-//		
-//		double d1 = 299.9;
-//		int i1 = (int)d1;
-//		System.out.println(i1);
-		
 //		BigDecimal bd = new BigDecimal(299.40);
+//		System.out.println(bd.toString());
 //		double d1 = 299.40;
 //		DecimalFormat df = new DecimalFormat("####");
-//		System.out.println(bd.toString());
 //		System.out.println(d1);
 //		System.out.println(df.format(d1));
-		
-//		Double d1 = new Double("299.40");
-//		float f1 = (float)d1.doubleValue();
-//		System.out.println(f1);
 		
 //		BigDecimal bd1 = new BigDecimal(299);
 //		info.info(bd1);
@@ -130,65 +107,14 @@ public class BigDecimalTest extends BaseTest {
 //		info.info(b3.round(new MathContext(7, RoundingMode.FLOOR))); // 0.000005348565
 //		info.info(b3.round(new MathContext(7, RoundingMode.DOWN))); // 0.000005348565
 		
-		/**
-		 * 标度 和 精度 begin
-		 */
-//		BigDecimal dividend = new BigDecimal(10000.0);
-//		BigDecimal divisor = new BigDecimal(3);
-//		/*
-//		 * 指定明标度的商
-//		 * 小数点后保留位数
-//		 */
-//		BigDecimal rs1 = dividend.divide(divisor, 3, RoundingMode.HALF_UP);
-//		info.info(rs1); // 33.333
-//		info.info(rs1.scale()); // 3
 		
-//		/*
-//		 * 指明精度的商
-//		 * 左起保留非零数位数
-//		 */
-//		MathContext mc = new MathContext(2, RoundingMode.HALF_UP);
-//		BigDecimal rs = dividend.divide(divisor, mc);
-//		info.info(rs.toPlainString()); // 33.333
-//		info.info(mc.getPrecision()); // 5
-		
-//		BigDecimal dividend = new BigDecimal(3.001);
-//		BigDecimal divisor = new BigDecimal(3);
-//		// 指定明标度的商
-//		BigDecimal quotient = dividend.divide(divisor, 5, RoundingMode.HALF_UP);
-//		info.info(quotient); // 0.00033
-//		info.info(quotient.scale()); // 5
-		
-		/*
-		 * 指明精度的商
-		 * 左边保留的位数
-		 */
-//		MathContext mc = new MathContext(5, RoundingMode.HALF_UP);
-//		BigDecimal rs = dividend.divide(divisor, mc);
-//		info.info(rs); // 0.00033333
-//		info.info(mc.getPrecision()); // 5
-//		info.info(rs.scale()); // 标度 8
-		/**
-		 * 标度 和 精度 end
-		 */
 		
 
 //		// 异常 java.lang.NullPointerException
 //		BigDecimal bd1 = new BigDecimal("123.456");
 //		info.info(bd1.add(null));
 		
-		/**
-		 * 显示全数字（非科学计法）
-		 * MathContext 的第一个参数为精度，左起保留的位数
-		 */
-//		System.out.println(new BigDecimal(1111.111).add(new BigDecimal("1111.111"), 
-//				new MathContext(2, RoundingMode.HALF_UP)).toPlainString());
-		// 科学计算法
-//		System.out.println(new BigDecimal(1111.111).add(new BigDecimal("11111.111"), 
-//				new MathContext(1, RoundingMode.HALF_UP)).toEngineeringString());
 		
-		// 12222.222000000000103682396002113819122314453125
-//		System.out.println(new BigDecimal(1111.111).add(new BigDecimal("11111.111")).setScale(4, RoundingMode.HALF_UP).toString());
 		
 		
 		/**
@@ -210,6 +136,7 @@ public class BigDecimalTest extends BaseTest {
 		 * Non-terminating decimal expansion; no exact representable decimal result.
 		 */
 //		info.info(new BigDecimal(1000).divide(new BigDecimal(3)));
+		
 		/*
 		 * 实际小数位数多于指定标度时
 		 * 异常
@@ -255,6 +182,78 @@ public class BigDecimalTest extends BaseTest {
 		System.out.println(b1.divide(new BigDecimal(100))); // 0.08300000000000000710542735760100185871124267578125
 		System.out.println(b1.divide(new BigDecimal(100)).setScale(5, RoundingMode.HALF_UP)); // 0.08300
 		System.out.println(8.3/100); // 0.083
+	}
+	
+	/**
+	 * 标度和精度
+	 */
+	@Test
+	public void test3() {
+		/**
+		 * 标度 和 精度 begin
+		 */
+		BigDecimal dividend = new BigDecimal(10000.0);
+		BigDecimal divisor = new BigDecimal(3);
+		/*
+		 * 指定明标度的商
+		 * 小数点后保留位数
+		 */
+		BigDecimal rs1 = dividend.divide(divisor, 3, RoundingMode.HALF_UP);
+		info.info(rs1); // 3333.333
+		info.info(rs1.scale()); // 3
+		
+		/*
+		 * 指明精度的商
+		 * 左起保留非零数位数
+		 */
+		MathContext mc = new MathContext(2, RoundingMode.HALF_UP);
+		BigDecimal rs = dividend.divide(divisor, mc);
+		info.info(rs.toPlainString()); // 3300
+		info.info(mc.getPrecision()); // 2
+		
+		System.out.println("=====================");
+		
+//		BigDecimal dividend = new BigDecimal(3.001);
+//		BigDecimal divisor = new BigDecimal(3);
+//		// 指定明标度的商
+//		BigDecimal quotient = dividend.divide(divisor, 5, RoundingMode.HALF_UP);
+//		info.info(quotient); // 0.00033
+//		info.info(quotient.scale()); // 5
+		
+		/*
+		 * 指明精度的商
+		 * 左边保留的位数
+		 */
+//		MathContext mc = new MathContext(5, RoundingMode.HALF_UP);
+//		BigDecimal rs = dividend.divide(divisor, mc);
+//		info.info(rs); // 0.00033333
+//		info.info(mc.getPrecision()); // 5
+//		info.info(rs.scale()); // 标度 8
+		/**
+		 * 标度 和 精度 end
+		 */
+	}
+	
+	/**
+	 * 科学计数法
+	 */
+	@Test
+	public void test4() {
+		/**
+		 * 显示全数字（非科学计法）
+		 * MathContext 的第一个参数为精度，左起保留的位数
+		 */
+		BigDecimal bd1 = new BigDecimal(1111.111).add(new BigDecimal("1111.111"), new MathContext(2, RoundingMode.HALF_UP));
+		System.out.println(bd1.toPlainString()); // 2200
+		
+		// 科学计算法
+		BigDecimal bd2 = new BigDecimal(1111.111).add(new BigDecimal("11111.111"), new MathContext(1, RoundingMode.HALF_UP));
+		System.out.println(bd2.toEngineeringString()); // 10E+3
+		
+		BigDecimal bd3 = new BigDecimal(1111.111).add(new BigDecimal("11111.111"));
+		BigDecimal bd4 = bd3.setScale(4, RoundingMode.HALF_UP);
+		System.out.println(bd3.toString()); // 12222.222000000000103682396002113819122314453125
+		System.out.println(bd4.toString()); // 12222.2220
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.umbrella.zookeeper;
+package com.umbrella.zookeeper.zk;
 
 public class Constants {
 	

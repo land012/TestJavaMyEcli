@@ -151,9 +151,9 @@ class DESPlus {
 	 * @return 加密后的字节数组
 	 * @throws Exception
 	 */
-	public byte[] encrypt(byte[] arrB) throws Exception {
-		return encryptCipher.doFinal(arrB);
-	}
+//	public byte[] encrypt(byte[] arrB) throws Exception {
+//		return encryptCipher.doFinal(arrB);
+//	}
 
 	/**
 	 * 加密字符串
@@ -164,7 +164,9 @@ class DESPlus {
 	 * @throws Exception
 	 */
 	public String encrypt(String strIn) throws Exception {
-		return byteArr2HexStr(encrypt(strIn.getBytes()));
+		byte[] bytes = this.encryptCipher.doFinal(strIn.getBytes());
+		return byteArr2HexStr(bytes);
+//		return byteArr2HexStr(encrypt(strIn.getBytes()));
 	}
 
 	/**
@@ -188,7 +190,8 @@ class DESPlus {
 	 * @throws Exception
 	 */
 	public String decrypt(String strIn) throws Exception {
-		return new String(decrypt(hexStr2ByteArr(strIn)));
+		byte[] bytes = hexStr2ByteArr(strIn);
+		return new String(this.decryptCipher.doFinal(bytes));
 	}
 
 	/**

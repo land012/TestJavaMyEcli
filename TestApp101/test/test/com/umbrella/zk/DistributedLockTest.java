@@ -3,7 +3,7 @@ package test.com.umbrella.zk;
 import java.util.Timer;
 
 import com.umbrella.util.Preferences;
-import com.umbrella.zookeeper.Worker;
+import com.umbrella.zookeeper.zk.Worker;
 
 public class DistributedLockTest {
 

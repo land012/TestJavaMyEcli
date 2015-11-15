@@ -12,7 +12,7 @@ import org.apache.zookeeper.ZooKeeper;
 import test.com.umbrella.zk.TestUtils;
 
 import com.umbrella.util.Preferences;
-import com.umbrella.zookeeper.Constants;
+import com.umbrella.zookeeper.zk.Constants;
 /**
  * ¸æ¾¯³ÌÐò
  * @author asdf

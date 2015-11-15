@@ -27,7 +27,7 @@ public class ReflectTest extends BaseTest {
 	public void test1() {
 //		info.info(ReflectTest.class.getName());
 		
-//		// Modified ÐÞ¸Ä·û
+//		// Modified ÐÞÊÎ·û
 //		System.out.println("Modifier.ABSTRACT:" + Modifier.ABSTRACT);
 //		System.out.println("Modifier.PUBLIC:" + Modifier.PUBLIC);
 //		System.out.println("Modifier.PRIVATE:" + Modifier.PRIVATE);

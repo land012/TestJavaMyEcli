@@ -1,4 +1,4 @@
-package com.umbrella.zookeeper;
+package com.umbrella.zookeeper.zk;
 
 import java.io.IOException;
 import java.net.InetAddress;

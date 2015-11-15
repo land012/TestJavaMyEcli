@@ -1,4 +1,4 @@
-package test.com.umbrella.threadpool3;
+package com.umbrella.threadpool3;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

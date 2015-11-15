@@ -245,6 +245,7 @@ public class StringUtilsTest extends BaseTest {
 		for(int i=0; i<str1Arr.length; i++) {
 			System.out.println("-" + str1Arr[i] + "-");
 		}
+		
 	}
 
 }

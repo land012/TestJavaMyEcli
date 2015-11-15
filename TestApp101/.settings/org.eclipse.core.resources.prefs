@@ -1,7 +1,7 @@
-#Tue Nov 18 18:44:44 CST 2014
 eclipse.preferences.version=1
 encoding//files/file1.txt=UTF-8
 encoding//ini/test.properties=GBK
 encoding//lib/producerConsumer.jar=gbk
 encoding//src/com/my/Test.java=GBK
+encoding//src/com/my/test/StringTest.java=UTF-8
 encoding//src/com/my/test1/T5.java=UTF-8

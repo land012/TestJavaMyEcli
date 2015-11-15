@@ -3,6 +3,11 @@ package com.umbrella.threadlocal;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * ThreadLocal Demo
+ * @author xudazhou
+ *
+ */
 public class ThreadLocalDemo {
 
 	/**

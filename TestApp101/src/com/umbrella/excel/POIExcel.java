@@ -18,6 +18,11 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * POI¥¶¿ÌExcel
+ * @author xudazhou
+ *
+ */
 public class POIExcel {
 
 	/**
