@@ -36,9 +36,21 @@
 	<constant name="struts.i18n.encoding" value="gbk" />
 	
 	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="helloInterceptor" class="com.xu.interceptor.HelloInterceptor"></interceptor>
+			
+			<interceptor-stack name="allInterceptor">
+				<interceptor-ref name="helloInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- <default-interceptor-ref name="allInterceptor"></default-interceptor-ref> -->
+		
 		<default-action-ref name="index"></default-action-ref>
         <action name="index">
             <result>/default.jsp</result>
+            <interceptor-ref name="helloInterceptor"></interceptor-ref>
+            <!-- <interceptor-ref name="defaultStack"></interceptor-ref> -->
         </action>
         <action name="login" class="com.xu.action.UserAction" method="login">
         	<result>/index.jsp</result>
